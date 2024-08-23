@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="baseLayout" template="/WEB-INF/layouts/base.jsp">
+        <put-attribute name="title" value="..."/>
+        <put-attribute name="header" value="/WEB-INF/layouts/header.jsp"/>
+        <put-attribute name="content" value="..."/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp"/>
+    </definition>
+    
+    <definition name="login" template="/WEB-INF/layouts/login.jsp">
+        <put-attribute name="title" value="Đăng nhập"/>
+        <put-attribute name="content" value="/WEB-INF/layouts/login.jsp"/>
+    </definition>
+    
+    <definition name="home" extends="baseLayout">
+        <put-attribute name="title" value="Trang chủ"/>
+        <put-attribute name="content" value="/WEB-INF/pages/index.jsp"/>
+    </definition>
+    
+    <definition name="equipment" extends="baseLayout">
+        <put-attribute name="title" value="Quản trị thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/equipment.jsp"/>
+    </definition>
+    
+    <definition name="equipmentDetails" extends="baseLayout">
+        <put-attribute name="title" value="Chi tiết thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/equipmentDetails.jsp"/>
+    </definition>
+    <definition name="repairHistory" extends="baseLayout">
+        <put-attribute name="title" value="Cập nhật thông tin thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/repairHistory.jsp"/>
+    </definition>
+    
+    <definition name="incident" extends="baseLayout">
+        <put-attribute name="title" value="Cập nhật thông tin thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/incident.jsp"/>
+    </definition>
+    
+    <definition name="maintenanceSchedule" extends="baseLayout">
+        <put-attribute name="title" value="Cập nhật thông tin thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/maintenanceSchedule.jsp"/>
+    </definition>
+    
+    <definition name="deviceHistories" extends="baseLayout">
+        <put-attribute name="title" value="Cập nhật thông tin thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/deviceHistories.jsp"/>
+    </definition>
+    
+    <definition name="manageEquipmentMaintenanceSchedules" extends="baseLayout">
+        <put-attribute name="title" value="QUẢN LÝ LỊCH BẢO TRÌ"/>
+        <put-attribute name="content" value="/WEB-INF/pages/manageEquipmentMaintenanceSchedules.jsp"/>
+    </definition>
+    
+    <definition name="repairhistoryreport" extends="baseLayout">
+        <put-attribute name="title" value="BÁO CÁO LỊCH SỬ SỬA CHỮA"/>
+        <put-attribute name="content" value="/WEB-INF/pages/repairHistoryReport.jsp"/>
+    </definition>
+    
+    <definition name="chat" extends="baseLayout">
+        <put-attribute name="title" value="CHAT"/>
+        <put-attribute name="content" value="/WEB-INF/layouts/index.jsp"/>
+    </definition>
+    
+    <definition name="stats" extends="baseLayout">
+        <put-attribute name="title" value="Thống kê thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/stats.jsp"/>
+    </definition>
+    
+    <definition name="incidentStats" extends="baseLayout">
+        <put-attribute name="title" value="Kiểm tra giám sát thiết bị"/>
+        <put-attribute name="content" value="/WEB-INF/pages/incidentStats.jsp"/>
+    </definition>
+</tiles-definitions>

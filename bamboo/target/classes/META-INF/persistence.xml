@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="com.mycompany_bamboo_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.ltd.pojo.Incident</class>
+    <class>com.ltd.pojo.Repairhistory</class>
+    <class>com.ltd.pojo.Comment</class>
+    <class>com.ltd.pojo.Equipment</class>
+    <class>com.ltd.pojo.Forum</class>
+    <class>com.ltd.pojo.User</class>
+    <class>com.ltd.pojo.Equipmentlocation</class>
+    <class>com.ltd.pojo.Maintenanceschedule</class>
+    <class>com.ltd.pojo.Service</class>
+    <class>com.ltd.pojo.Equipmentimage</class>
+    <class>com.ltd.pojo.Category</class>
+    <class>com.ltd.pojo.Invoice</class>
+    <class>com.ltd.pojo.Invoicedetail</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/data?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="Admin@123"/>
+    </properties>
+  </persistence-unit>
+</persistence>
