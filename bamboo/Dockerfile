@@ -1,5 +1,5 @@
-# Sử dụng Maven image kết hợp với OpenJDK 17 để build ứng dụng
-FROM maven:3.8.6-openjdk-17-slim AS build
+# Sử dụng image Maven kết hợp với OpenJDK 17 để build ứng dụng
+FROM maven:3.8.6-jdk-17 AS build
 
 # Sao chép mã nguồn vào container
 COPY . /app
@@ -10,7 +10,7 @@ WORKDIR /app
 # Chạy lệnh Maven để build dự án và tạo file WAR
 RUN mvn clean install -DskipTests
 
-# Sử dụng image của OpenJDK để chạy ứng dụng Java
+# Sử dụng image OpenJDK để chạy ứng dụng Java
 FROM openjdk:17-jdk-slim
 
 # Sao chép file WAR đã build từ bước trước vào container
