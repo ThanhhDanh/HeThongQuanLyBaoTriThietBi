@@ -1,5 +1,5 @@
-# Sử dụng Maven image để build ứng dụng
-FROM maven:3.8.6-openjdk-17 AS build
+# Sử dụng Maven image kết hợp với OpenJDK 17 để build ứng dụng
+FROM maven:3.8.6-openjdk-17-slim AS build
 
 # Sao chép mã nguồn vào container
 COPY . /app
