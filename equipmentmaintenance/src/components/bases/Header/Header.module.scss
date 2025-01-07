@@ -1,0 +1,153 @@
+.wrapper {
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --search-button-width: 52px;
+    width: 100%;
+    height: var(--default-layout-header-height);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    // box-shadow: 0px 1px 1px rgba(0 0 0 / 12%);
+    box-shadow: 0px 8px 8px 0px #00000008;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.inner {
+    height: 100%;
+    width: var(--default-layout-width);
+    padding: 0 var(--default-layout-horizontal-spacer);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infos {
+    display: flex;
+    align-items: center;
+}
+
+.info-image {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+.label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 15px;
+    text-shadow: 2px 12px 6px #cdcccc;
+}
+
+.address {
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+//menu
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    font-size: 1.4rem;
+    background-color: transparent;
+    padding: 12px;
+    margin-right: 8px;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        height: 1px;
+        background: var(--primary);
+        width: 0;
+        transition: width 1s ease-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.menu-title {
+    font-size: 1.4rem;
+    font-family: var(--font-family);
+    margin-right: 8px;
+    line-height: 0;
+}
+
+.menu-icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+.btn-auth {
+    margin-top: 12px;
+    display: flex;
+    width: 124px;
+    max-width: 124px;
+}
+
+.btn-login {
+    border-radius: 10px;
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-login,
+.btn-register {
+    padding: 6px 12px 8px 12px;
+}
+
+.btn-avatar {
+    text-align: center;
+    width: 124px;
+    max-width: 124px;
+}
+
+.user-avatar {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.hotline {
+    display: flex;
+    align-items: center;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 20px;
+}
+
+.hotline .hotline-icon {
+    margin-left: 14px;
+}
+
+.hotline-phone {
+    color: var(--white);
+    padding: 8px 14px;
+}

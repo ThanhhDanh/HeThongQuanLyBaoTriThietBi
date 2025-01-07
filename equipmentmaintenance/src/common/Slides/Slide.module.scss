@@ -1,0 +1,61 @@
+.wrapper {
+    width: calc(
+        var(--default-layout-width) - var(--default-layout-sidebar-width) -
+            calc(var(--default-layout-horizontal-spacer) * 2)
+    );
+    overflow: hidden;
+    position: relative;
+    margin-left: 10px;
+}
+
+.inner {
+    display: inline-flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-item {
+    min-width: 100%;
+    width: 100%;
+    height: 448px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+// Hiểu ứng chuyển slide
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.4rem;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.fade {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade.active {
+    opacity: 1;
+}

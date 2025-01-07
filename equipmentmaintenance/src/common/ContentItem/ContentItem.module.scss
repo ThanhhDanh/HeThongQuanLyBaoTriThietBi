@@ -1,0 +1,236 @@
+:root {
+    --bg-content-item: linear-gradient(to top, rgba(60, 60, 60, 0.08), rgba(220, 220, 220, 0.2));
+}
+
+.no-gutters {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.wrapper {
+    --bg-content-item: linear-gradient(to top, rgba(10, 90, 170, 0.05), rgba(238, 238, 238, 0.07));
+    width: 600px;
+    min-width: 100%;
+    background: var(--bg-content-item);
+    padding: 48px;
+    border-right: 1px solid;
+    border-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(rgba(60, 60, 60, 0.3)),
+        to(rgba(220, 220, 220, 0.2))
+    );
+    border-image: linear-gradient(to top, rgba(60, 60, 60, 0.3), rgba(220, 220, 220, 0.2));
+    border-image-slice: 1;
+}
+
+.img-equip {
+    display: block;
+    height: 100%;
+    height: 373px;
+    width: 498px;
+    text-align: center;
+    margin: 0.8px;
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.4s opacity ease-in-out, transform 0.4s ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+    border-style: none;
+}
+
+.infos-equip {
+    padding: 10px 0 0;
+    position: relative;
+    height: 100%;
+}
+
+.name {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 10px 0 0;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    transition: 0.3s color ease-in-out;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+
+.description {
+    height: 120px;
+    max-height: 100%;
+    text-align: left;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    font-weight: 300;
+}
+
+.provides {
+    margin: 0 5px 20px 5px;
+    list-style: none;
+    padding: 0;
+}
+
+.check {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #a99a9a;
+}
+
+.provide {
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 5px;
+    width: calc(50% - 10px);
+    font-size: 1.4rem;
+    cursor: pointer;
+
+    transition: 0.3s color ease-in-out;
+}
+
+.action {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+    transition: 0.3s color ease-in-out;
+
+    .icon {
+        display: flex;
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Thêm transition cho opacity và transform */
+    }
+
+    .active-icon {
+        display: none;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Thêm transition cho opacity và transform */
+    }
+
+    &:hover {
+        color: var(--text-primary);
+
+        .icon {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        .active-icon {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes toUp {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.active-icon,
+.icon {
+    margin-left: 5px;
+}
+
+.active-icon {
+    color: var(--text-primary);
+    display: none;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+    margin-right: 4px;
+}
+
+.see-add {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    &:hover {
+        .see-detail {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.icon {
+    font-size: 1.6rem;
+    margin-right: 10px;
+    color: var(--text-primary);
+}
+
+.see-detail {
+    font-size: 1.3rem;
+    color: #999;
+    font-style: italic;
+    transition: 0.3s color ease-in-out;
+}
+
+// Paginate
+.paginates {
+    text-align: center;
+}
+
+.paginate {
+    display: inline-block;
+    margin: 25px 0 0 0;
+    padding-left: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.paginate li {
+    display: inline-block;
+    border: 1px solid rgb(224, 224, 224);
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 0 10px 0 0;
+    border-radius: 5px;
+}
+
+.paginate li a {
+    padding: 2px 5px;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #000;
+    outline: none;
+}
+
+.paginate li.active {
+    background: rgb(224, 224, 224);
+    outline: none;
+}

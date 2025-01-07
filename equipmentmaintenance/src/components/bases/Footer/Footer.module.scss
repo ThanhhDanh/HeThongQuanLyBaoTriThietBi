@@ -1,0 +1,23 @@
+.wrapper {
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --search-button-width: 52px;
+    width: 100%;
+    height: var(--default-layout-header-height);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    // box-shadow: 0px 1px 1px rgba(0 0 0 / 12%);
+    box-shadow: 0px 8px 8px 0px #00000008;
+    display: flex;
+    justify-content: center;
+}
+
+.inner {
+    height: 100%;
+    width: var(--default-layout-width);
+    padding: 0 var(--default-layout-horizontal-spacer);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

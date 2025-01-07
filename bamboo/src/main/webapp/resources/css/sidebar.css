@@ -1,0 +1,238 @@
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+    transition: margin-left 0.4s ease-in-out;
+    margin-left: 70px;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70px;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+    background-color: #212529;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.main.expand {
+    margin-left: 260px; /* Khi sidebar mở rộng */
+}
+
+
+#toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+#toggle-btn i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #fff;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+
+    &:hover {
+        background-color: rgba(255,255,255,0.75);
+        border-left: 3px solid #3d7ddd;
+    }
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #212529;
+    padding: 0;
+    min-width: 28rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 20em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 0.075rem 0.075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    transform: rotate(45deg);
+    transition: all 0.6s ease-out;
+}
+
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapse::after {
+    transform: rotate(45deg);
+    transition: all 0.6s ease-out;
+}
+
+.notification-item {
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.read {
+    background-color: #f5f5f5; 
+}
+
+.unread {
+    background-color: #ffebcc; 
+}
+
+.notification-item a {
+    white-space: normal;
+}
+
+.notification-dropdown {
+    transition: all 0.6s ease-in-out;
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #333;
+}
+
+.notification-bell {
+    animation: shake 1s linear infinite;
+}
+
+.notification-title, .notification-content {
+    color: #333;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    padding: 3px 6px;
+    transition: right 0.4s ease-in-out;
+}
+
+
+#sidebar.expand .badge {
+    right: 200px;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.delete-notification {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.6rem;
+    color: #f35454;
+    cursor: pointer;
+    transition: all .6s ease-in-out;
+    transform: scale(0.7);
+    
+    &:hover {
+        transform: scale(1);
+    }
+}

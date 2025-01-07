@@ -1,0 +1,148 @@
+@import 'normalize.css';
+
+:root {
+    --primary: linear-gradient(90deg, #0050ae 0%, #0391e8 100%);
+    --black: #000;
+    --white: #fff;
+    --text-color: #333;
+    --text-primary: #0050ae;
+
+    --font-family: 'ProximaNova', sans-serif;
+
+    //Default Layout
+    --default-layout-header-height: 80px;
+    --default-layout-width: 1340px;
+    --default-layout-horizontal-spacer: 24px;
+    --default-layout-sidebar-width: 356px;
+    --default-layout-sidebar-height: 376px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizespeed; //tối ưu hóa hiện font khi web chưa load kịp xuống
+    color: var(--text-color);
+    background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(rgba(255, 255, 255, 0.96)),
+            to(rgba(255, 255, 255, 0.96))
+        ),
+        url(/assets/images/bg-8a.jpg) repeat 0 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96) 0, rgba(255, 255, 255, 0.96) 100%),
+        url(/assets/images/bg-8a.jpg) repeat 0 0;
+    overflow-y: overlay;
+    user-select: none;
+    touch-action: none;
+    padding-right: 0 !important;
+}
+
+// Css Scrollbar
+html ::-webkit-scrollbar {
+    border-radius: 0px;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html ::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    text-decoration: none !important;
+}
+
+//Fonts emmbeded
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Sofiapro;
+    src: url('/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+
+//Custom tippy
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 22px;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tiipy-content {
+        padding: 8px 9px;
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+}
