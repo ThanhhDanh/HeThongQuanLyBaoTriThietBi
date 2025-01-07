@@ -1,5 +1,5 @@
 # Sử dụng Maven image để build ứng dụng
-FROM maven:3.8.6-jdk-17 AS build
+FROM maven:3.8.6-openjdk-17 AS build
 
 # Sao chép mã nguồn vào container
 COPY . /app
@@ -14,10 +14,10 @@ RUN mvn clean install -DskipTests
 FROM openjdk:17-jdk-slim
 
 # Sao chép file WAR đã build từ bước trước vào container
-COPY --from=build /app/target/bamboo-1.0-SNAPSHOT.jar /bamboo-1.0-SNAPSHOT.jar
+COPY --from=build /app/target/bamboo-1.0-SNAPSHOT.war /bamboo-1.0-SNAPSHOT.war
 
 # Cấu hình lệnh để chạy ứng dụng
-ENTRYPOINT ["java", "-jar", "/bamboo-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/bamboo-1.0-SNAPSHOT.war"]
 
 # Mở port 8080 để ứng dụng có thể truy cập được
 EXPOSE 8080
